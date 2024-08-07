@@ -1,0 +1,11 @@
+Def convert(s):
+Ch=list(s)
+For I in range(len(s)):
+If(i==0 and ch[i]!=’ ‘ or ch[i]=’ ‘ and ch[i-1]==’ ‘ )
+If(ch[i]>=’A’ and ch[i]<=’Z’):
+Ch[i]=ch(ch[i]+ord(‘a’)-ord(‘A’))
+St=’ ‘.join(ch)
+Return st;
+If_name_=”__main”
+S=”geeks for geeks”
+Print(convert(s));
