@@ -1,0 +1,8 @@
+Import math
+N=6
+Sqroot=math.sqrt(N)
+Square=n*n
+Cube=n*n*n
+Print(“SQUARE ROOT IS”,sqroot)
+Print(“SQUARE IS”,square)
+Print(“Cube is”,cube)
