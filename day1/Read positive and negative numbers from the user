@@ -1,0 +1,9 @@
+sum=0
+while True
+a=i
+a==-1
+break
+sum=sum+a
+avg=sum/2
+print(sum)
+print(avg)
