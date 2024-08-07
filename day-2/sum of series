@@ -1,0 +1,7 @@
+def square_sum(series):
+    return sum(x**2 for x in series)
+
+# Example usage:
+series = [1, 2, 3, 4, 5]
+result = square_sum(series)
+print("The square sum of the series is:", result)
