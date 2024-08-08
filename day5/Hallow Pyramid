@@ -1,0 +1,25 @@
+def hollow_pyramid( r ) :  
+    m = 0  
+    for n in range(1, r + 1) : # last row  
+       
+        # printing spaces  
+        for p in range(n , r) :  
+            print(' ', end='')  
+           
+        # Print *  
+        while (m != (2 * n - 1)) :  
+            if (m == 0 or m == 2 * n - 2) :  
+                print('*', end='')  
+            else :  
+                print(' ', end ='')  
+            m = m + 1  
+        m = 0;  
+        print ("")  # printing next row  
+           
+    # printing last row  
+    for n in range(0, 2 * r -1) :  
+        print ('*', end = '')  
+   
+# displaying the pyramid  
+r = 8  
+hollow_pyramid(r)  
