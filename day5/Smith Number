@@ -1,12 +1,33 @@
-import sys
+import java.util.Scanner;
+public class SmithNumberChecker {
+    static int digitSum(int n) {
+        int sum = 0;
+        while (n > 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
+    }
+    static int primeFactorSum(int n) {
+        int sum = 0;
+        for (int i = 2; i <= n; i++) {
+            while (n % i == 0) {
+                sum += digitSum(i);
+                n /= i;
+            }
+        }
+        return sum;
+    }
+    static boolean isSmithNumber(int n) {
+        return digitSum(n) == primeFactorSum(n);
+    }
+    public static void main(String[] args) {
+        int number = 32
+        if (isSmithNumber(number)) {
+            System.out.println(number + " is a Smith number.");
+        } else {
+            System.out.println(number + " is not a Smith number.");
+        }
+    }
+}
 
-# Printing
-print('Hello, World!')
-
-# Looping
-for i in range(10):
-    print(i)
-
-# Accessing arguments
-for arg in sys.argv[1:]:
-    print(arg)
