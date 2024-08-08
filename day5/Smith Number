@@ -1,0 +1,40 @@
+import math
+num=int(input("Enter The Number "))
+
+def primes(n):
+    factors = []
+    d = 2
+    while d*d <= n:
+        while (n % d) == 0:
+            factors.append(d)
+            n //= d
+        d += 1
+    if n > 1:
+        
+        factors.append(n)
+    return factors
+
+
+def SumOfDigits(n):
+    sum=0
+    while(n!=0):
+        sum+=n%10
+        n=(int)(n/10)
+    return sum
+
+l=primes(num)
+print("Prime Factorisation of Number : ",l)
+primetotal=0
+for i in l:
+    primetotal+=SumOfDigits(i)
+
+temp1=SumOfDigits(num)      
+print("Sum Of Digits Of Entered Number" , temp1)
+print("Sum Of Digits Of Prime Factors Of Number " ,primetotal)
+if(num<=0):
+    print("Not A Smith Number")
+    
+elif(primetotal==temp1):
+    print("Given Number Is A Smith Number")
+else:
+    print("Number Is Not A Smith Number")
