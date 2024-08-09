@@ -1,0 +1,25 @@
+def encode_caesar_cipher(message, shift):
+    encoded_message = []
+
+    # Iterate through each character in the message
+    for char in message:
+        if char.isalpha():  # Check if the character is a letter
+            # Determine the start of the alphabet (A or a) to handle cases for uppercase and lowercase
+            start = ord('A') if char.isupper() else ord('a')
+            
+            # Compute the shifted position and wrap around using modulo 26
+            shifted_char = chr(start + (ord(char) - start + shift) % 26)
+            encoded_message.append(shifted_char)
+        else:
+            # Non-alphabet characters are added unchanged
+            encoded_message.append(char)
+
+    # Join the list into a single string and return
+    return ''.join(encoded_message)
+
+# Example usage
+message = "Hello, World!"
+shift = 3
+encoded_message = encode_caesar_cipher(message, shift)
+print(f"Original Message: {message}")
+print(f"Encoded Message: {encoded_message}")
