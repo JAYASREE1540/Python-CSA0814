@@ -1,0 +1,10 @@
+def rotate_list(lst, k):
+    # Handle the case when k is greater than the length of the list
+    k = k % len(lst) if lst else 0
+    return lst[-k:] + lst[:-k]
+
+# Example usage
+my_list = [1, 2, 3, 4, 5]
+k = 2
+rotated_list = rotate_list(my_list, k)
+print(rotated_list)  # Output will be [4, 5, 1, 2, 3]
