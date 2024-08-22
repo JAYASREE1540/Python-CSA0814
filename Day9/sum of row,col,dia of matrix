@@ -1,0 +1,33 @@
+import numpy as np
+
+def matrix_sums(matrix):
+    # Convert the matrix to a NumPy array for easier manipulation
+    mat = np.array(matrix)
+    
+    # Calculate row sums
+    row_sums = np.sum(mat, axis=1)
+    
+    # Calculate column sums
+    col_sums = np.sum(mat, axis=0)
+    
+    # Calculate main diagonal sum
+    main_diag_sum = np.trace(mat)
+    
+    # Calculate anti-diagonal sum
+    anti_diag_sum = np.sum(np.fliplr(mat).diagonal())
+    
+    return row_sums, col_sums, main_diag_sum, anti_diag_sum
+
+# Example matrix
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+row_sums, col_sums, main_diag_sum, anti_diag_sum = matrix_sums(matrix)
+
+print("Row Sums:", row_sums)
+print("Column Sums:", col_sums)
+print("Main Diagonal Sum:", main_diag_sum)
+print("Anti-Diagonal Sum:", anti_diag_sum)
