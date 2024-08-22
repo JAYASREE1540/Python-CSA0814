@@ -1,0 +1,11 @@
+# Input string
+s = input("Enter the string: ")
+
+# Define vowels
+vowels = "aeiouAEIOU"
+
+# Process the string
+result = ''.join(c + ('^' if c in vowels else '@') for c in s)
+
+# Print the result
+print("Processed string:", result)
