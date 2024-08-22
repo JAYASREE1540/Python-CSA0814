@@ -1,0 +1,16 @@
+import numpy as np
+
+# Define the start and end dates for July 2020
+start_date = '2020-07-01'
+end_date = '2020-08-01'
+
+# Calculate the number of weekdays in July 2020
+weekdays_count = np.busday_count(start_date, end_date)
+
+# Find the first Monday in July 2020
+# Roll forward to the first Monday in the month of July 2020
+first_monday = np.busday_offset(start_date, 0, roll='forward', weekmask='Mon')
+
+# Display the results
+print(f"First Monday of July 2020 is: {first_monday}")
+print(f"Number of weekdays in July 2020: {weekdays_count}")
