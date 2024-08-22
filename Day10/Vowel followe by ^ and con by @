@@ -1,0 +1,4 @@
+str=input("enter the string")
+vowel="aeiou"
+res=''.join(c+('^'if c in vowel else '@')for c in str)
+print(res)
