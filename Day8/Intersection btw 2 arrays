@@ -1,0 +1,6 @@
+def intersecton(A, B)
+return list(set(A)&set(B))
+A=[1,2,3,4,5]
+B=[4,5,6,7,8]
+result=intersectino(A, B)
+print(result)
