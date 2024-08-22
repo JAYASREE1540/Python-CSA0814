@@ -1,0 +1,35 @@
+def is_geometric_progression(sequence):
+    # Handle edge cases
+    if len(sequence) < 2:
+        return True  # A single number or empty sequence is trivially a GP
+
+    # Calculate the common ratio from the first two elements
+    first = sequence[0]
+    second = sequence[1]
+    
+    # If the first term is zero, check if all terms are zero
+    if first == 0:
+        return all(x == 0 for x in sequence)
+    
+    # Calculate the common ratio (r) from the first two terms
+    if second % first != 0:
+        return False  # Ratio must be an integer
+    common_ratio = second // first
+    
+    # Check if all subsequent terms follow the common ratio
+    for i in range(2, len(sequence)):
+        if sequence[i-1] == 0 or sequence[i] % sequence[i-1] != 0:
+            return False
+        if sequence[i] // sequence[i-1] != common_ratio:
+            return False
+    
+    return True
+
+# Example usage
+sequence1 = [2, 6, 18, 54]  # This is a GP with a common ratio of 3
+sequence2 = [1, 2, 4, 8, 16]  # This is not a GP, common ratio changes
+sequence3 = [5, 5, 5, 5]  # This is a GP with a common ratio of 1
+
+print(f"Sequence {sequence1} is a GP: {is_geometric_progression(sequence1)}")
+print(f"Sequence {sequence2} is a GP: {is_geometric_progression(sequence2)}")
+print(f"Sequence {sequence3} is a GP: {is_geometric_progression(sequence3)}")
