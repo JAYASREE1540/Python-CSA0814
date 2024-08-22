@@ -1,0 +1,20 @@
+def is_additive_sequence(sequence):
+    # Handle edge cases
+    if len(sequence) < 3:
+        return True  # Any sequence with fewer than 3 terms is trivially additive
+
+    # Check the additive property
+    for i in range(2, len(sequence)):
+        if sequence[i] != sequence[i-1] + sequence[i-2]:
+            return False
+    
+    return True
+
+# Example usage
+sequence1 = [1, 2, 3, 5, 8]      # This is an additive sequence (Fibonacci-like)
+sequence2 = [1, 1, 2, 4, 7]      # This is not an additive sequence
+sequence3 = [3, 4, 7, 11]        # This is an additive sequence
+
+print(f"Sequence {sequence1} is additive: {is_additive_sequence(sequence1)}")
+print(f"Sequence {sequence2} is additive: {is_additive_sequence(sequence2)}")
+print(f"Sequence {sequence3} is additive: {is_additive_sequence(sequence3)}")
