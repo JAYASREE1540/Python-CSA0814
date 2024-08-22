@@ -1,0 +1,6 @@
+str=input("enter the str")
+fre={}
+for char in str:
+    fre[char]=fre.get(char,0)+1
+res=''.join(chr((ord(c)-ord('a')+fre[c])%26+ord('a'))for c in str)
+print(res)
